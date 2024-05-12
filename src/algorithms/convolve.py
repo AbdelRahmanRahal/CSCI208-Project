@@ -2,8 +2,8 @@ import numpy as np
 
 def convolve(image: np.ndarray, kernel: np.ndarray) -> np.ndarray:
 	'''
-	Time Complexity: O(y * x * m * n)
-	Space Complexity: O(y * x)
+	Time complexity: O(y * x * m * n)
+	Space complexity: O(y * x)
 	'''
 	m, n = kernel.shape
 	y, x = image.shape
