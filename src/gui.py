@@ -1,6 +1,7 @@
 import sys
 
 from algorithms.sobel import sobel
+from algorithms.gaussian_blur import gaussian_blur as gb
 
 from PyQt6.QtCore import Qt
 from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLabel, QHBoxLayout, QFileDialog
@@ -27,7 +28,7 @@ class ImageProcessingApp(QWidget):
 		self.processButton = QPushButton('Apply Sobel Edge Detection')
 
 		# Load a default image
-		self.loadImage('src\\rose.jpeg')
+		self.loadImage('src\\rose 301x301.jpeg')
 
 		# Add widgets to layouts
 		imageLayout.addWidget(self.originalImageLabel)
@@ -48,7 +49,7 @@ class ImageProcessingApp(QWidget):
 
 	def processImage(self):
 		# Apply Gaussian blur to the image
-		blurred_image = sobel('src\\rose.jpeg')
+		blurred_image = sobel('src\\rose 300x301.jpeg')
 		blurred_image.save('blurred_image.jpg')
 
 		# Update the processed image label

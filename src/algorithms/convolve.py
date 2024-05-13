@@ -5,8 +5,9 @@ def convolve(image: np.ndarray, kernel: np.ndarray) -> np.ndarray:
 	Time complexity: O(y * x * m * n)
 	Space complexity: O(y * x)
 	'''
-	m, n = kernel.shape
 	y, x = image.shape
+	m, n = kernel.shape
+	
 	y = y - m + 1
 	x = x - m + 1
 	new_image = np.zeros((y,x))

@@ -1,4 +1,4 @@
-from .convolve import convolve
+from algorithms.convolve import convolve
 
 import numpy as np
 from PIL import Image
