@@ -1,15 +1,18 @@
 from algorithms.convolve import convolve
 
 import numpy as np
+from typing import Union
 from PIL import Image
 
-def sobel(image_path: str) -> Image.Image:
+def sobel(image: Union[str, Image.Image]) -> Image.Image:
 	'''
 	Time complexity: O(y * x * m * n)
 	Space complexity: O(y * x)
 	'''
-	# Loading the image using PIL
-	image = Image.open(image_path).convert('L')
+	if isinstance(image, str): # If it's a string, then it's treated as a file path
+		# Loading the image using PIL
+		image = Image.open(image).convert('L')
+
 	image_array = np.array(image)
 
 	# Sobel operators
