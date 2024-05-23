@@ -26,6 +26,9 @@ def convolve(image: np.ndarray, kernel: np.ndarray) -> np.ndarray:
 	dimensions (y-m+1, x-n+1), where y and x are the dimensions of the input
 	image, and m and n are the dimensions of the kernel.
 	"""
+	# Rotating the kernel by 180 degrees
+	kernel = np.flip(kernel)
+
 	y, x = image.shape
 	m, n = kernel.shape
 	
