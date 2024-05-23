@@ -26,8 +26,9 @@ def convolve(image: np.ndarray, kernel: np.ndarray) -> np.ndarray:
 	dimensions (y-m+1, x-n+1), where y and x are the dimensions of the input
 	image, and m and n are the dimensions of the kernel.
 	"""
-	# Rotating the kernel by 180 degrees
-	kernel = np.flip(kernel)
+	# Checking if the kernel is not symmetrical
+	if not np.allclose(kernel, kernel.T, rtol=1e-05, atol=1e-08):
+		kernel = np.flip(kernel) # Rotating the kernel by 180 degrees
 
 	y, x = image.shape
 	m, n = kernel.shape
@@ -35,7 +36,6 @@ def convolve(image: np.ndarray, kernel: np.ndarray) -> np.ndarray:
 	y = y - m + 1
 	x = x - m + 1
 	new_image = np.zeros((y,x))
-	
 	for i in range(y):
 		for j in range(x):
 			new_image[i][j] = np.sum(image[i:i+m, j:j+m] * kernel)
