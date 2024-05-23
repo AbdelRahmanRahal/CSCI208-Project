@@ -1,15 +1,36 @@
-from algorithms.convolve import convolve
+from typing import Union
 
 import numpy as np
-from typing import Union
 from PIL import Image
+
+from .convolve import convolve
 
 
 def gaussian_blur(image: Union[str, Image.Image], kernel_size: int = 5, sigma: float = 1) -> Image.Image:
-	'''
-	Time complexity: O(y * x * m * n)
-	Space complexity: O(y * x)
-	'''
+	"""
+	Applies Gaussian blur to an input image.
+
+	This function blurs the input image using a Gaussian kernel. The amount of blur
+	is controlled by the standard deviation (`sigma`) of the Gaussian distribution
+	that defines the kernel. The kernel size is automatically adjusted to be odd if
+	an even size is provided.
+
+	Parameters:
+	- image (Union[str, Image.Image]): Either a file path to an image (as a string) or a PIL `Image` object.
+	  If a string is provided, the image will be loaded using PIL.
+	- kernel_size (int, optional): The size of the Gaussian kernel. Defaults to 5.
+	- sigma (float, optional): The standard deviation of the Gaussian distribution. Controls the amount of blur. Defaults to 1.
+
+	Returns:
+	- Image.Image: A PIL `Image` object representing the blurred version of the input image.
+
+	Time complexity: O(y * x * m * n), where y and x are the dimensions of the input image,
+	and m and n are the dimensions of the Gaussian kernel.
+
+	Space complexity: O(y * x), where y and x are the dimensions of the input image.
+
+	Note: The Gaussian kernel is applied separately to each color channel (RGB) of the image.
+	"""
 	if isinstance(image, str): # If it's a string, then it's treated as a file path
 		# Loading the image using PIL
 		image = Image.open(image)
@@ -47,6 +68,19 @@ def gaussian_blur(image: Union[str, Image.Image], kernel_size: int = 5, sigma: f
 
 
 def create_gaussian_kernel(size: int, sigma: float) -> np.ndarray:
+	"""
+    Creates a 2D Gaussian kernel to be used for Gaussian blur.
+
+    This function generates a 2D Gaussian kernel based on the provided size and standard deviation (`sigma`).
+    The kernel is normalized so that the sum of all elements equals 1.
+
+    Parameters:
+    - size (int): The width and height of the square kernel.
+    - sigma (float): The standard deviation of the Gaussian distribution.
+
+    Returns:
+    - np.ndarray: A 2D NumPy array representing the Gaussian kernel.
+    """
 	# Creating a 1D Gaussian kernel
 	kernel_1d = [-(size // 2) + i for i in range(size)]
 
