@@ -20,8 +20,16 @@ def gamma_correction(image: Union[str, Image.Image], gamma: float = 2.2) -> Imag
 
 	Space comlexity: O(n), where n is the number of pixels in the image.
 	"""
+	if gamma <= 0:
+		# Unexpected behaviour occurs at gamma <= 0
+		raise ValueError("Gamma must be greater than 0.")
+
 	if isinstance(image, str):  # If it's a string, then it's treated as a file path
 		image = Image.open(image)
+	
+	if gamma == 1:
+		# If gamma is 1, the image remains unchanged
+		return image
 	
 	# Converting the image to RGB mode if it's not already
 	if image.mode != 'RGB':
