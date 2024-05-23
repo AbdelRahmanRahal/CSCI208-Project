@@ -18,7 +18,7 @@ def gamma_correction(image: Union[str, Image.Image], gamma: float = 2.2) -> Imag
 
 	Time complexity: O(n), where n is the number of pixels in the image.
 
-	Space comlexity: O(n), where n is the number of pixels in the image.
+	Space complexity: O(n), where n is the number of pixels in the image.
 	"""
 	if gamma <= 0:
 		# Unexpected behaviour occurs at gamma <= 0

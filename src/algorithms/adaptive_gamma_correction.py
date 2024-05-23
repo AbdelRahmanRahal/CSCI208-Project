@@ -25,7 +25,7 @@ def adaptive_gamma_correction(
 
 	Time complexity: O(n), where n is the number of pixels in the image.
 
-	Space comlexity: O(n), where n is the number of pixels in the image.
+	Space complexity: O(n), where n is the number of pixels in the image.
 
 	Note: The gamma value for each block is calculated based on the average brightness of the block,
 	allowing for adaptive enhancement across the image.

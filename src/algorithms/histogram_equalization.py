@@ -21,7 +21,7 @@ def histogram_equalization(image: Union[str, Image.Image]) -> Image.Image:
 
 	Time complexity: O(n), where n is the number of pixels in the image.
 
-	Space comlexity: O(n), where n is the number of pixels in the image.
+	Space complexity: O(n), where n is the number of pixels in the image.
 
 	Note: This function works by calculating the histogram of the input image,
 	computing the cumulative distribution function (CDF), normalizing the CDF
