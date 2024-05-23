@@ -1,18 +1,18 @@
 import sys
 
-from algorithms.gamma_correction import gamma_correction
-from algorithms.sepia import sepia
-from algorithms.sobel import sobel
+from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QPixmap
+from PyQt6.QtWidgets import (QApplication, QFileDialog, QHBoxLayout, QLabel,
+                             QPushButton, QVBoxLayout, QWidget)
+
 from algorithms.adaptive_gamma_correction import adaptive_gamma_correction
+from algorithms.gamma_correction import gamma_correction
+from algorithms.gaussian_blur import gaussian_blur as gb
 from algorithms.histogram_equalization import histogram_equalization
 from algorithms.mean_blur import mean_blur
-from algorithms.gaussian_blur import gaussian_blur as gb
+from algorithms.sepia import sepia
+from algorithms.sobel import sobel
 
-from PyQt6.QtCore import Qt
-from PyQt6.QtWidgets import QApplication, QWidget, QVBoxLayout, QPushButton, QLabel, QHBoxLayout, QFileDialog
-from PyQt6.QtGui import QPixmap
-from PIL import Image
-import numpy as np
 
 class ImageProcessingApp(QWidget):
 	def __init__(self):
@@ -61,9 +61,6 @@ class ImageProcessingApp(QWidget):
 		pixmap = QPixmap('blurred_image.jpg')
 		self.processedImageLabel.setPixmap(pixmap.scaled(300, 300, aspectRatioMode=Qt.AspectRatioMode.KeepAspectRatio))
 
-def gaussian_blur(image_path, kernel_size=5, sigma=1):
-	# Assuming the gaussian_blur function is defined as previously shown
-	pass
 
 if __name__ == '__main__':
 	app = QApplication(sys.argv)
