@@ -1,7 +1,17 @@
 Input: image array as Image.
-Precondition: Image is greyscale.
+Precondition: Image color mode is greyscale.
 ————————————————————————————————
-DEFINE Sobel operators for x-direction as sobel_x and y-direction as sobel_y
+DEFINE Sobel operators for x-direction as sobel_x and y-direction as sobel_y:
+	sobel_x [
+		[-1, 0, 1],
+		[-2, 0, 2],
+		[-1, 0, 1]
+	]
+	sobel_y = [
+		[-1, -2, -1],
+		[ 0,  0,  0],
+		[ 1,  2,  1]
+	]
 
 APPLY sobel_x to the image using the convolve function
 STORE the result in edges_x

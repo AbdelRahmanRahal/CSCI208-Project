@@ -1,0 +1,18 @@
+Input: image array as Image, gamma (float).
+————————————————————————————————
+APPLY gamma correction to the image using the gamma_correction function with the provided gamma value
+
+CONVERT the gamma-corrected image to a NumPy array
+
+DEFINE the sepia filter matrix:
+	sepia = [
+		[0.393, 0.769, 0.189],
+		[0.349, 0.686, 0.168],
+		[0.272, 0.534, 0.131]
+	]
+
+APPLY the sepia filter to the image array by dot-multiplying the image array with the transpose of the sepia matrix
+
+CLIP the resulting sepia-filtered array values to ensure they fall within the valid range for displayable colors (0-255)
+
+RETURN the sepia-filtered image

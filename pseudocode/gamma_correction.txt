@@ -1,0 +1,10 @@
+Input: image array as Image, gamma (float).
+Precondition: gamma must be greater than 0, Image color mode is RGB.
+————————————————————————————————
+IF gamma is equal to 1 THEN
+	RETURN the original image since gamma correction does not change the image
+ENDIF
+
+APPLY gamma correction to Image using the formula: P_c = (P_uc / P_max) ^ γ * P_max
+
+RETURN the gamma-corrected image

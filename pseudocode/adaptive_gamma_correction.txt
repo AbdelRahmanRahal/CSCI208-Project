@@ -1,4 +1,4 @@
-Input: image array as Image, block size as block_size (integer), gamma range as gamma_range (tuple of 2 floats)
+Input: image array as Image, block size as block_size (integer), gamma range as gamma_range (tuple of 2 floats).
 ————————————————————————————————
 GET the height and width of Image as H and W
 

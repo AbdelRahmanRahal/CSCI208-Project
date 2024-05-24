@@ -1,0 +1,33 @@
+Input: image array as Image.
+Precondition: Image color mode is greyscale.
+————————————————————————————————
+INITIALIZE a histogram array as hist_array with 256 bins set to 0
+
+FLATTEN Image to a 1D array
+
+FOR each pixel in the flattened Image:
+	INCREMENT the count in the histogram bin corresponding to the pixel value
+ENDFOR
+
+INITIALIZE a cumulative distribution function (CDF) array as CDF_array with 256 bins set to 0
+
+SET the first element of CDF_array to the first element of hist_array
+
+FOR each subsequent element in hist_array starting from the second element:
+	ADD the current histogram element to the previous CDF element and store the result in the current CDF element
+ENDFOR
+
+FIND the minimum and maximum values in CDF_array
+
+NORMALIZE CDF_array by subtracting the minimum value from each element and then
+dividing each element by the difference between the maximum and minimum values, finally multiplying by 255
+
+USING the normalized CDF as a lookup table, transform the pixel values in the image to enhance contrast:
+	FOR each pixel in the flattened Image:
+		LOOKUP the corresponding value in the normalized CDF using the pixel value as the index
+		REPLACE the pixel value with the looked-up value
+	ENDFOR
+
+RESHAPE the transformed pixel values back to the original image shape
+
+RETURN the enhanced image
