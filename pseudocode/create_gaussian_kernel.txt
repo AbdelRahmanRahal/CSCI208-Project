@@ -1,0 +1,19 @@
+Input: kernel size as kernel_size (integer), and sigma (float).
+————————————————————————————————
+INITIALIZE a 1D array as kernel_1d with values ranging from -(size // 2) to (size // 2)
+
+FOR each index i in kernel_1d:
+	APPLY the Gaussian function to the value at index i
+ENDFOR
+
+NORMALIZE kernel_1d by dividing each element by the sum of all elements in kernel_1d
+
+INITIALIZE a 2D array as kernel_2d with dimensions kernel_size x kernel_size
+
+FOR each row i in kernel_2d:
+	FOR each column j in kernel_2d:
+		SET kernel_2d[i][j] to the product of kernel_1d[i] and kernel_1d[j]
+	ENDFOR
+ENDFOR
+
+RETURN kernel_2d as a 2D NumPy array

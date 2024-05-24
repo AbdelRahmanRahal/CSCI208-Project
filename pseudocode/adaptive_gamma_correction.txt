@@ -1,0 +1,12 @@
+Input: image array as Image, block size as block_size (integer), gamma range as gamma_range (tuple of 2 floats)
+————————————————————————————————
+GET the height and width of Image as H and W
+
+FOR each block Image with size block_size:
+	CALCULATE the average brightness of the block
+	CALCULATE the gamma value based on the average brightness using the calculate_gamma function
+	APPLY gamma correction to the block using the formula: P_c = (P_uc / P_max) ^ γ * P_max
+	REPLACE the original block Image with the corrected block
+ENDFOR
+
+RETURN the corrected image

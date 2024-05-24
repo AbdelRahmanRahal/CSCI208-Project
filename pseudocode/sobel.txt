@@ -1,0 +1,17 @@
+Input: image array as Image.
+Precondition: Image is greyscale.
+————————————————————————————————
+DEFINE Sobel operators for x-direction as sobel_x and y-direction as sobel_y
+
+APPLY sobel_x to the image using the convolve function
+STORE the result in edges_x
+
+APPLY sobel_y to the image using the convolve function
+STORE the result in edges_y
+
+COMBINE the results of edges_x and edges_y to compute the magnitude of the gradient:
+	Edges = sqrt(edges_x^2 + edges_y^2)
+
+NORMALIZE Edges to the range 0-255 by dividing each element by the maximum value and multiplying by 255
+
+RETURN Edges

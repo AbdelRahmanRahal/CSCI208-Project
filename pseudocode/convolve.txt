@@ -1,0 +1,28 @@
+Input: image array as Image, and a square kernel as Kernel, both with type numpy.ndarray.
+Postcondition: The output image size is smaller than the input image size because edges are ignored.
+————————————————————————————————
+IF Kernel is not symmetric THEN
+	ROTATE Kernel by 180°
+ENDIF
+	
+FOR each row in Image:
+	FOR each pixel in current row:
+		
+		INITIALIZE an accumulator to 0
+		
+		FOR each row in Kernel:
+			FOR each element in the current kernel row:
+				
+				IF the position of the element corresponds to the position of the pixel THEN
+					MULTIPLY the value of the element by the value of the pixel
+					ADD the result to the accumulator
+				ENDIF
+				
+			ENDFOR
+		ENDFOR
+		
+		ASSIGN the value of the accumulator to the corresponding pixel in the output image
+	ENDFOR
+ENDFOR
+
+RETURN the output image

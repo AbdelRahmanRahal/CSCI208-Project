@@ -1,0 +1,18 @@
+Input: image array as Image, kernel size as kernel_size (integer), and sigma (float).
+————————————————————————————————
+IF kernel_size is even THEN
+	INCREMENT kernel_size by 1 to ensure it's odd
+ENDIF
+
+CREATE a Gaussian kernel as Kernel using kernel_size and Sigma
+
+CALCULATE the new dimensions of the blurred image based on the kernel size
+
+INITIALIZE an empty array for the blurred image with the calculated dimensions with zeros
+
+FOR each color channel (RGB) Image:
+	APPLY Kernel to the color channel using the convolve function
+	STORE the result in the corresponding channel of the blurred image array
+ENDFOR
+
+RETURN the blurred image
