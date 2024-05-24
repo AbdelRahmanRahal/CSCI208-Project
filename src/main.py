@@ -619,7 +619,7 @@ class Ui_MainWindow(object):
 
 	def retranslateUi(self, MainWindow):
 		_translate = QtCore.QCoreApplication.translate
-		MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+		MainWindow.setWindowTitle(_translate("MainWindow", "Image Processing Algorithms Visualiser"))
 		self.loadImageButton.setStatusTip(_translate("MainWindow", "Load an image from drive."))
 		self.loadImageButton.setText(_translate("MainWindow", "Load Image"))
 		self.selectAlgorithmLabel.setText(_translate("MainWindow", "Select an algorithm:"))
