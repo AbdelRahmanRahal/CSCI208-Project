@@ -5,7 +5,7 @@ from PIL import Image
 
 
 def adaptive_gamma_correction(
-	image: Union[str, Image.Image], block_size: int = 16, gamma_range: tuple = (0.5, 2.0)
+	image: Union[str, Image.Image], block_size: int = 16, gamma_range: tuple[float, float] = (0.5, 2.0)
 ) -> Image.Image:
 	"""
 	Applies adaptive gamma correction to an input image.
