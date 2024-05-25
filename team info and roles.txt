@@ -5,7 +5,7 @@ Mohamed AbdelRaouf	— 221001609
 Nour Elsharkawy		— 221001458
 
 Team roles:
-AbdelRahman: Frontend, empirical analysis
-Mahmoud: Convolve, Sobel
+AbdelRahman: Histogram Equalization, Sepia, Frontend
+Mahmoud: Convolve, Sobel, empirical analysis
 Mohamed: Mean Blur, Guassian Blur
-Nour: 
+Nour: Gamma Correction, Adaptive Gamma Correction
