@@ -1,0 +1,11 @@
+Team members:
+AbdelRahman Rahal	— 221001443
+Mahmoud AbdelGelil	— 221001313
+Mohamed AbdelRaouf	— 221001609
+Nour Elsharkawy		— 221001458
+
+Team roles:
+AbdelRahman: Frontend, empirical analysis
+Mahmoud: Convolve, Sobel
+Mohamed: Mean Blur, Guassian Blur
+Nour: 
