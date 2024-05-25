@@ -48,7 +48,12 @@ def histogram_equalization(image: Union[str, Image.Image]) -> Image.Image:
 	# Normalizing the cdf
 	cdf_min = min(cdf)
 	cdf_max = max(cdf)
-	cdf_normalized = [(value - cdf_min) * 255 / (cdf_max - cdf_min) for value in cdf]
+	if cdf_max != cdf_min:
+		# Normalizing the cdf
+		cdf_normalized = [(value - cdf_min) * 255 / (cdf_max - cdf_min) for value in cdf]
+	else:
+		# If cdf_max equals cdf_min, skip normalization and keep the original image
+		cdf_normalized = cdf
 
 	# Using cdf_normalized as a lookup table to equalize the image
 	flattened_enhanced_image = [cdf_normalized[pixel] for pixel in image_array.flatten()]

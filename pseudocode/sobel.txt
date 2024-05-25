@@ -22,6 +22,10 @@ STORE the result in edges_y
 COMBINE the results of edges_x and edges_y to compute the magnitude of the gradient:
 	Edges = sqrt(edges_x^2 + edges_y^2)
 
-NORMALIZE Edges to the range 0-255 by dividing each element by the maximum value and multiplying by 255
+IF maximum value of edges is 0 THEN
+	SKIP the normalization step
+ELSE
+	NORMALIZE Edges to the range 0-255 by dividing each element by the maximum value and multiplying by 255
+ENDIF
 
 RETURN Edges

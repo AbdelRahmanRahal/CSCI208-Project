@@ -19,8 +19,12 @@ ENDFOR
 
 FIND the minimum and maximum values in CDF_array
 
-NORMALIZE CDF_array by subtracting the minimum value from each element and then
-dividing each element by the difference between the maximum and minimum values, finally multiplying by 255
+IF the minimum and maximum values are the same THEN
+	SKIP the normalization step
+ELSE
+	NORMALIZE CDF_array by subtracting the minimum value from each element and then
+	dividing each element by the difference between the maximum and minimum values, finally multiplying by 255
+ENDIF
 
 USING the normalized CDF as a lookup table, transform the pixel values in the image to enhance contrast:
 	FOR each pixel in the flattened Image:

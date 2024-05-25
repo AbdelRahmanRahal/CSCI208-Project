@@ -58,7 +58,10 @@ def sobel(image: Union[str, Image.Image]) -> Image.Image:
 	# ||G|| = sqrt(Gx^2 + Gy^2)
 	edges = np.sqrt(edges_x ** 2 + edges_y ** 2)
 
-	# Normalize to 0-255
-	edges = edges / edges.max() * 255
+	# Checking if the maximum value is zero to avoid division by zero
+	max_value = edges.max()
+	if max_value > 0:
+		# Normalizing to 0-255
+		edges = edges / max_value * 255
 
 	return Image.fromarray(edges.astype(np.uint8))
