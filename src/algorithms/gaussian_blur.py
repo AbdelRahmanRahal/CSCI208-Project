@@ -46,8 +46,8 @@ def gaussian_blur(image: Union[str, Image.Image], kernel_size: int = 5, sigma: f
 	m, n = kernel.shape
 	
 	# Calculating the new dimensions of the blurred image
-	y = image_array.shape[0] - 2 * (m // 2)
-	x = image_array.shape[1] - 2 * (m // 2)
+	y = image_array.shape[0] - m + 1
+	x = image_array.shape[1] - m + 1
 	
 	# Creating an output array with the new dimensions
 	blurred_image = np.zeros((y, x, image_array.shape[2]))
